@@ -16,7 +16,7 @@ function App() {
             src={imageProductMobile}
           />
         </div>
-        <div className="flex flex-col bg-white max-w-md px-10 pt-10 rounded-r-lg">
+        <div className="flex flex-col bg-white max-w-md px-10 pt-10 rounded-b-lg lg:rounded-r-lg">
           <h2 className="text-2xl text-[#70768F] font-[Montserrat] font-bold">
             P E R F U M E
           </h2>
