@@ -5,10 +5,16 @@ import cartIcon from "./assets/icon-cart.svg";
 function App() {
   return (
     <div className="flex h-screen justify-cente]">
-      <div className="flex flex-col md:flex-row m-auto">
+      <div className="flex flex-col lg:flex-row my-20 mx-auto lg:m-auto rounded-b">
         <div>
-          <img className="rounded-l-lg max-w-md" src={imageProduct} />
-          <img className="rounded-t max-w-md hidden" src={imageProductMobile} />
+          <img
+            className="rounded-l-lg max-w-md hidden lg:flex"
+            src={imageProduct}
+          />
+          <img
+            className="rounded-t max-w-md lg:hidden"
+            src={imageProductMobile}
+          />
         </div>
         <div className="flex flex-col bg-white max-w-md px-10 pt-10 rounded-r-lg">
           <h2 className="text-2xl text-[#70768F] font-[Montserrat] font-bold">
