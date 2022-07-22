@@ -34,7 +34,7 @@ function App() {
             </p>
           </div>
           <div className="flex flex-col my-5">
-            <button className="border h-16 bg-green-700 rounded-lg">
+            <button className="border h-16 bg-green-700 active:bg-green-900 rounded-lg">
               <div className="flex flex-row gap-4 justify-center">
                 <svg
                   className="self-center"
