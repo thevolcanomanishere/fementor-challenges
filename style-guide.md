@@ -1,21 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-@import url('https://fonts.googleapis.com/css?family=Fraunces');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-html {
-  background:#f2ebe3
-}
-
-@layer base {
-  p {
-    font-family: Montserrat, Fraunces;
-  }
-}
-
-/* # Front-end Style Guide
+# Front-end Style Guide
 
 ## Layout
 
@@ -49,8 +32,4 @@ The designs were created to the following widths:
 - Weights: 500, 700
 
 - Family: [Fraunces](https://fonts.google.com/specimen/Fraunces)
-- Weights: 700 */
-
-.body p {
- font-size: 14px;
-}
+- Weights: 700

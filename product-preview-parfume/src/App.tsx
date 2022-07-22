@@ -1,12 +1,14 @@
 import imageProduct from "./assets/image-product-desktop.jpg";
+import imageProductMobile from "./assets/image-product-mobile.jpg";
 import cartIcon from "./assets/icon-cart.svg";
 
 function App() {
   return (
-    <div className="flex h-screen justify-center bg-[#f2ebe3]">
-      <div className="flex flex-row m-auto">
+    <div className="flex h-screen justify-cente]">
+      <div className="flex flex-col md:flex-row m-auto">
         <div>
           <img className="rounded-l-lg max-w-md" src={imageProduct} />
+          <img className="rounded-t max-w-md hidden" src={imageProductMobile} />
         </div>
         <div className="flex flex-col bg-white max-w-md px-10 pt-10 rounded-r-lg">
           <h2 className="text-2xl text-[#70768F] font-[Montserrat] font-bold">
@@ -21,11 +23,11 @@ function App() {
           </p>
           <div className="flex flex-row my-6 font-[Fraunces] font-bold">
             <h3 className="text-green-700 text-5xl">$149.99</h3>
-            <p className="text-lg line-through self-center ml-8 text-[#70768F]">
+            <p className="text-2xl line-through self-center ml-8 text-[#70768F]">
               $169.99
             </p>
           </div>
-          <div className="flex flex-col mt-5">
+          <div className="flex flex-col my-5">
             <button className="border h-16 bg-green-700 rounded-lg">
               <div className="flex flex-row gap-4 justify-center">
                 <svg
