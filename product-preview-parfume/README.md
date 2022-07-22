@@ -1,6 +1,6 @@
 # Solution for frontend mentor.
 
-Original README.md melow.
+Original README.md below.
 
 # Frontend Mentor - Product preview card component
 
