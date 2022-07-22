@@ -5,7 +5,7 @@ import cartIcon from "./assets/icon-cart.svg";
 function App() {
   return (
     <div className="flex h-screen justify-cente]">
-      <div className="flex flex-col lg:flex-row my-20 mx-auto lg:m-auto rounded-b">
+      <div className="flex flex-col lg:flex-row my-5 mx-auto lg:m-auto rounded-b">
         <div>
           <img
             className="rounded-l-lg max-w-md hidden lg:flex"
@@ -20,10 +20,10 @@ function App() {
           <h2 className="text-2xl text-[#70768F] font-[Montserrat] font-bold">
             P E R F U M E
           </h2>
-          <h2 className="text-6xl py-5 p font-[Fraunces] font-bold">
+          <h2 className="text-4xl lg:text-6xl py-5 p font-[Fraunces] font-bold">
             Gabrielle Essence Eau De Parfum
           </h2>
-          <p className="text-xl font-medium tracking-wider font py-5 font-[Montserrat] text-[#70768F]">
+          <p className="text-xl font-medium tracking-wider font py-3 lg:py-5 font-[Montserrat] text-[#70768F]">
             A floral, solar and voluptuous interpretation composed by Olivier
             Podge, Perfumer-Creator for the House of CHANEL
           </p>
