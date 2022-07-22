@@ -2,6 +2,8 @@
 
 Original README.md below.
 
+Live url -> [Product Preview](fementor-product-preview-parfume.vercel.app)
+
 # Frontend Mentor - Product preview card component
 
 ![Design preview for the Product preview card component coding challenge](./design/desktop-preview.jpg)
