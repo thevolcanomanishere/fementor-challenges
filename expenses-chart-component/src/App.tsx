@@ -35,13 +35,12 @@ function App() {
     const renderBar = (day: { day: string; amount: number }, index: number) => {
       const barPercentage = (day.amount / maxAmount) * 100;
       const barHeight = Math.round((barPercentage / 100) * 144);
-      const baseStyle = `rounded w-10 md:w-12`;
+      const baseStyle = `rounded w-9 md:w-12`;
       const bgColor = day.amount === maxAmount ? "bg-cyan" : "bg-softRed";
       const style = `${bgColor} ${baseStyle} hover:opacity-50`;
-      // invisible group-hover:visible
       return (
         <div className="flex flex-col justify-end group" key={index}>
-          <div className="bg-black opacity-75 text-center text-white mb-1 md:mb-2 rounded">
+          <div className="bg-black opacity-75 py-1 text-center text-white mb-1 md:mb-2 rounded invisible group-hover:visible">
             ${day.amount}
           </div>
           <div className="flex flex-col mx-2">
@@ -54,7 +53,7 @@ function App() {
     return chartData.map(renderBar);
   };
   return (
-    <div className="flex flex-col h-screen justify-center m-auto max-w-lg">
+    <div className="flex flex-col h-screen justify-center md:m-auto max-w-lg">
       <div className="flex bg-softRed text-white justify-between p-5 rounded-3xl shadow-md">
         <div className="flex flex-col">
           <span className="text-lg">My balance</span>
@@ -69,10 +68,10 @@ function App() {
         <span className="text-3xl font-semibold p-5">
           Spending - Last 7 Days
         </span>
-        <div className="flex flex-row space-x px-8 py-10">
+        <div className="flex flex-row px-1 md:px-8 pb-5">
           {renderChart(data)}
         </div>
-        <div className="border max-w-[90%]"></div>
+        <div className="border max-w-[90%] ml-6"></div>
         <div className="flex justify-between flex-row px-8 py-10">
           <div className="flex flex-col">
             <span className="text-gray-400">Total this month</span>
