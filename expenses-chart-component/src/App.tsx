@@ -53,7 +53,7 @@ function App() {
     return chartData.map(renderBar);
   };
   return (
-    <div className="flex flex-col h-screen justify-center md:m-auto max-w-lg">
+    <div className="flex flex-col h-screen justify-center m-auto max-w-lg">
       <div className="flex bg-softRed text-white justify-between p-5 rounded-3xl shadow-md">
         <div className="flex flex-col">
           <span className="text-lg">My balance</span>
@@ -68,7 +68,7 @@ function App() {
         <span className="text-3xl font-semibold p-5">
           Spending - Last 7 Days
         </span>
-        <div className="flex flex-row px-1 md:px-8 pb-5">
+        <div className="flex flex-row justify-center md:px-8 pb-5">
           {renderChart(data)}
         </div>
         <div className="border max-w-[90%] ml-6"></div>
