@@ -1,4 +1,4 @@
-import Comment from "./comment";
+import Comment from "./Comment";
 import Data from "../../data.json";
 import { FC } from "react";
 

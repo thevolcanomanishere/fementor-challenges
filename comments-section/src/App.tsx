@@ -1,6 +1,6 @@
 /// <reference types="vite-plugin-svgr/client" />
 import Data from "../data.json";
-import Thread from "./components/thread";
+import Thread from "./components/Thread";
 
 const App = () => {
   return (
