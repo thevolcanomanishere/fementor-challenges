@@ -1,5 +1,6 @@
 /// <reference types="vite-plugin-svgr/client" />
 import Data from "../data.json";
+import NewComment from "./components/NewComment";
 import Thread from "./components/Thread";
 
 const App = () => {
@@ -8,6 +9,9 @@ const App = () => {
       {Data.comments.map((comment, index) => {
         return <Thread thread={comment} propKey={index} />;
       })}
+      <div>
+        <NewComment thread={Data} />
+      </div>
     </div>
   );
 };

@@ -2,28 +2,19 @@
 import Data from "../../data.json";
 import { ReactComponent as IconReply } from "../svgs/icon-reply.svg";
 
-type Reply = typeof Data.comments[number]["replies"][number];
-
-const Comment = ({
-  comment,
-  key,
-  isReply,
-}: {
-  comment: any;
-  key?: number;
-  isReply?: boolean;
-}) => {
+const Comment = ({ comment, key }: { comment: any; key?: number }) => {
   const createImageUri = (comment: { user: { image: { png: string } } }) => {
     const uri = comment.user.image.png.replace("./images/avatars", "../assets");
     return new URL(uri, import.meta.url).href;
   };
 
-  const renderAt = (comment: Reply) => {
-    <span className="text-blue-900">@{comment.replyingTo}</span>;
+  const renderAt = (comment: any) => {
+    if (comment.replyingTo) {
+      return <span className="text-blue-900">@{comment.replyingTo} </span>;
+    }
   };
 
   const imageUri = createImageUri(comment);
-
   return (
     <section key={key} className="bg-white rounded-lg my-2 mx-4 p-3 shadow">
       <div className="flex flex-row space-x-6">

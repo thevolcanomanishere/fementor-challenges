@@ -6,15 +6,16 @@ const Thread: FC<any> = ({
   thread,
   propKey,
 }: {
-  thread: typeof Data.comments[number];
+  thread: any;
   propKey: number;
 }) => {
   return (
     <div key={propKey}>
       <Comment comment={thread} />
       <div className="ml-4 border-l-2">
+        {/*@ts-ignore*/}
         {thread.replies.map((reply, index) => {
-          return <Comment comment={reply} key={index} isReply={true} />;
+          return <Comment comment={reply} key={index} />;
         })}
       </div>
     </div>
