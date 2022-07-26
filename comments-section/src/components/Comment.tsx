@@ -30,27 +30,39 @@ const Comment = ({
 
   const imageUri = createImageUri(comment);
   return (
-    <section key={key} className="bg-white rounded-lg my-2 mx-4 p-3 shadow">
-      <div className="flex flex-row space-x-6">
-        <img className="w-10 h-10 bg-black rounded-full" src={imageUri} />
-        <div className="flex flex-row  space-x-6 self-center">
-          <h2 className="flex text-lg font-bold">
-            {comment.user.username}{" "}
-            {currentUser.username === comment.user.username && (
-              <span className="text-white text-base font-normal bg-[#5458B0] rounded ml-2 px-2">
-                you
-              </span>
-            )}
-          </h2>
-          <span className="text-lg text-gray-600">{comment.createdAt}</span>
+    <section
+      key={key}
+      className="md:flex bg-white rounded-lg my-2 mx-4 p-3 shadow"
+    >
+      <div className="hidden md:block flex-col align-center p-2 h-[90px] w-12 mr-4 rounded-lg bg-[#F5F5FC]">
+        <div className="font-bold text-gray-400 text-center pb-1">+</div>
+        <div className="font-bold text-scoreColor text-center">
+          {comment.score}
         </div>
+        <div className="font-bold text-gray-400 text-center">-</div>
       </div>
-      <p className="my-5 font-sans text-gray-600">
-        {renderAt(comment)}
-        {comment.content}
-      </p>
-      <div className="flex flex-row justify-between">
-        <div className="flex flex-row justify-between space-x-5 p-2 rounded-lg bg-[#F5F5FC]">
+      <div>
+        <div className="flex flex-row space-x-6">
+          <img className="w-10 h-10 bg-black rounded-full" src={imageUri} />
+          <div className="flex flex-row  space-x-6 self-center">
+            <h2 className="flex text-lg font-bold">
+              {comment.user.username}{" "}
+              {currentUser.username === comment.user.username && (
+                <span className="text-white text-base font-normal bg-[#5458B0] rounded ml-2 px-2">
+                  you
+                </span>
+              )}
+            </h2>
+            <span className="text-lg text-gray-600">{comment.createdAt}</span>
+          </div>
+        </div>
+        <p className="my-5 font-sans text-gray-600">
+          {renderAt(comment)}
+          {comment.content}
+        </p>
+      </div>
+      <div className="md:hidden flex flex-row justify-between">
+        <div className=" flex flex-row justify-between space-x-5 p-2 rounded-lg bg-[#F5F5FC]">
           <div className="font-bold text-gray-400">+</div>
           <div className="font-bold text-scoreColor">{comment.score}</div>
           <div className="font-bold text-gray-400">-</div>
@@ -70,7 +82,7 @@ const Comment = ({
             </div>
           ) : (
             <>
-              <div className="pt-[5px]">
+              <div className="pt-[5px] ">
                 <IconReply />
               </div>
               <div className="text-scoreColor font-extrabold">Reply</div>
