@@ -5,9 +5,15 @@ import Thread from "./components/Thread";
 
 const App = () => {
   return (
-    <div className="flex flex-col h-screen justify-center m-auto">
+    <div className="flex flex-col justify-center m-auto">
       {Data.comments.map((comment, index) => {
-        return <Thread thread={comment} propKey={index} />;
+        return (
+          <Thread
+            thread={comment}
+            currentUser={Data.currentUser}
+            propKey={index}
+          />
+        );
       })}
       <div>
         <NewComment thread={Data} />

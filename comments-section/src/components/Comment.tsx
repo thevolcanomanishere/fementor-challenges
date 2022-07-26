@@ -1,8 +1,18 @@
 /// <reference types="vite-plugin-svgr/client" />
 import Data from "../../data.json";
 import { ReactComponent as IconReply } from "../svgs/icon-reply.svg";
+import { ReactComponent as IconDelete } from "../svgs/icon-delete.svg";
+import { ReactComponent as IconEdit } from "../svgs/icon-edit.svg";
 
-const Comment = ({ comment, key }: { comment: any; key?: number }) => {
+const Comment = ({
+  comment,
+  currentUser,
+  key,
+}: {
+  comment: any;
+  currentUser: { username: string };
+  key?: number;
+}) => {
   const createImageUri = (comment: { user: { image: { png: string } } }) => {
     const uri = comment.user.image.png.replace("./images/avatars", "../assets");
     return new URL(uri, import.meta.url).href;
@@ -13,6 +23,10 @@ const Comment = ({ comment, key }: { comment: any; key?: number }) => {
       return <span className="text-blue-900">@{comment.replyingTo} </span>;
     }
   };
+  console.log(currentUser);
+  console.log(comment.user.username);
+
+  if (currentUser.username === comment.user.username) console.log("Here");
 
   const imageUri = createImageUri(comment);
   return (
@@ -20,7 +34,14 @@ const Comment = ({ comment, key }: { comment: any; key?: number }) => {
       <div className="flex flex-row space-x-6">
         <img className="w-10 h-10 bg-black rounded-full" src={imageUri} />
         <div className="flex flex-row  space-x-6 self-center">
-          <h2 className="text-lg font-bold">{comment.user.username}</h2>
+          <h2 className="flex text-lg font-bold">
+            {comment.user.username}{" "}
+            {currentUser.username === comment.user.username && (
+              <span className="text-white text-base font-normal bg-[#5458B0] rounded ml-2 px-2">
+                you
+              </span>
+            )}
+          </h2>
           <span className="text-lg text-gray-600">{comment.createdAt}</span>
         </div>
       </div>
@@ -35,10 +56,26 @@ const Comment = ({ comment, key }: { comment: any; key?: number }) => {
           <div className="font-bold text-gray-400">-</div>
         </div>
         <div className="flex flex-row space-x-1 self-center">
-          <div className="pt-[5px]">
-            <IconReply />
-          </div>
-          <div className="text-scoreColor font-extrabold">Reply</div>
+          {currentUser.username === comment.user.username ? (
+            <div className="flex space-x-2">
+              <div className="pt-[4px]">
+                <IconDelete />
+              </div>
+              <span className="text-[#ED6368] font-bold">Delete</span>
+              <div className="pt-[5px] pl-1">
+                <IconEdit />
+              </div>
+
+              <span className="text-[#5357B6] font-bold">Edit</span>
+            </div>
+          ) : (
+            <>
+              <div className="pt-[5px]">
+                <IconReply />
+              </div>
+              <div className="text-scoreColor font-extrabold">Reply</div>
+            </>
+          )}
         </div>
       </div>
     </section>
