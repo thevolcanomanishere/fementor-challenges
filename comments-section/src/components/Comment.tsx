@@ -13,7 +13,11 @@ const Comment = ({
   key?: number;
 }) => {
   const createImageUri = (comment: { user: { image: { png: string } } }) => {
-    const uri = comment.user.image.png.replace("./images/avatars", "../assets");
+    const uri = comment.user.image.png.replace(
+      "./images/avatars",
+      "/src/assets"
+    );
+    console.log(uri);
     return new URL(uri, import.meta.url).href;
   };
 
@@ -22,10 +26,6 @@ const Comment = ({
       return <span className="text-blue-900">@{comment.replyingTo} </span>;
     }
   };
-  console.log(currentUser);
-  console.log(comment.user.username);
-
-  if (currentUser.username === comment.user.username) console.log("Here");
 
   const imageUri = createImageUri(comment);
   return (
