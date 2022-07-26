@@ -46,7 +46,7 @@ const Comment = ({
               alt="Profile picture"
             />
             <div className="flex flex-row space-x-3 md:space-x-6 self-center">
-              <h2 className="flex text-lg font-bold">
+              <h2 className="flex font-[700] pt-1">
                 {comment.user.username}{" "}
                 {currentUser.username === comment.user.username && (
                   <span className="text-white h-6 mt-1 px-2 text-sm font-normal bg-[#5458B0] rounded ml-2">
