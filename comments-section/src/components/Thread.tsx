@@ -6,7 +6,7 @@ const Thread: FC<any> = ({
   currentUser,
   propKey,
 }: {
-  thread: any;
+  thread: any; // could use typeof Data.comments[number]
   currentUser: { username: string };
   propKey: number;
 }) => {

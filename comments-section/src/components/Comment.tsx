@@ -41,7 +41,7 @@ const Comment = ({
         <div className="flex flex-row justify-between mr-4">
           <div className="flex flex-row space-x-6">
             <img className="w-10 h-10 bg-black rounded-full" src={imageUri} />
-            <div className="flex flex-row  space-x-6 self-center">
+            <div className="flex flex-row space-x-3 md:space-x-6 self-center">
               <h2 className="flex text-lg font-bold">
                 {comment.user.username}{" "}
                 {currentUser.username === comment.user.username && (
@@ -50,7 +50,9 @@ const Comment = ({
                   </span>
                 )}
               </h2>
-              <span className="text-lg text-gray-600">{comment.createdAt}</span>
+              <span className="md:text-lg text-sm text-gray-600 pt-1">
+                {comment.createdAt}
+              </span>
             </div>
           </div>
           <div className="hidden md:block flex-row space-x-1 self-center">

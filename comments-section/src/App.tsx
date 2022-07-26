@@ -5,7 +5,7 @@ import Thread from "./components/Thread";
 
 const App = () => {
   return (
-    <div className="flex flex-col justify-center m-auto max-w-[1000px]">
+    <div className="flex flex-col justify-center mx-auto my-14 max-w-[800px]">
       {Data.comments.map((comment, index) => {
         return (
           <Thread
