@@ -42,18 +42,42 @@ const Comment = ({
         <div className="font-bold text-gray-400 text-center">-</div>
       </div>
       <div>
-        <div className="flex flex-row space-x-6">
-          <img className="w-10 h-10 bg-black rounded-full" src={imageUri} />
-          <div className="flex flex-row  space-x-6 self-center">
-            <h2 className="flex text-lg font-bold">
-              {comment.user.username}{" "}
-              {currentUser.username === comment.user.username && (
-                <span className="text-white text-base font-normal bg-[#5458B0] rounded ml-2 px-2">
-                  you
-                </span>
-              )}
-            </h2>
-            <span className="text-lg text-gray-600">{comment.createdAt}</span>
+        <div className="flex flex-row justify-between mr-4">
+          <div className="flex flex-row space-x-6">
+            <img className="w-10 h-10 bg-black rounded-full" src={imageUri} />
+            <div className="flex flex-row  space-x-6 self-center">
+              <h2 className="flex text-lg font-bold">
+                {comment.user.username}{" "}
+                {currentUser.username === comment.user.username && (
+                  <span className="text-white text-sm font-normal bg-[#5458B0] rounded py-1 ml-2">
+                    you
+                  </span>
+                )}
+              </h2>
+              <span className="text-lg text-gray-600">{comment.createdAt}</span>
+            </div>
+          </div>
+          <div className="hidden md:block flex-row space-x-1 self-center">
+            {currentUser.username === comment.user.username ? (
+              <div className="flex space-x-2  justify-end">
+                <div className="pt-[4px]">
+                  <IconDelete />
+                </div>
+                <span className="text-[#ED6368] font-bold">Delete</span>
+                <div className="pt-[5px] pl-1">
+                  <IconEdit />
+                </div>
+
+                <span className="text-[#5357B6] font-bold">Edit</span>
+              </div>
+            ) : (
+              <div className="flex space-x-2 justify-end">
+                <div className="pt-[5px]">
+                  <IconReply />
+                </div>
+                <div className="text-scoreColor font-extrabold">Reply</div>
+              </div>
+            )}
           </div>
         </div>
         <p className="my-5 font-sans text-gray-600">
