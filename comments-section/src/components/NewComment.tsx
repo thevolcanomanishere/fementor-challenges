@@ -23,7 +23,7 @@ const NewComment = ({ thread }: { thread: typeof Data }) => {
       </button>
 
       <div className="flex flex-row justify-between md:hidden">
-        <img className="w-10 h-10" src={imageUri} />
+        <img className="w-10 h-10" src={imageUri} alt="Profile picture" />
         <button className="text-white rounded-lg w-24 h-12 bg-[#5458B0]">
           Send
         </button>

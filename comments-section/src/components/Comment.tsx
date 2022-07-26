@@ -40,7 +40,11 @@ const Comment = ({
       <div>
         <div className="flex flex-row justify-between mr-4">
           <div className="flex flex-row space-x-6">
-            <img className="w-10 h-10 bg-black rounded-full" src={imageUri} />
+            <img
+              className="w-10 h-10 bg-black rounded-full"
+              src={imageUri}
+              alt="Profile picture"
+            />
             <div className="flex flex-row space-x-3 md:space-x-6 self-center">
               <h2 className="flex text-lg font-bold">
                 {comment.user.username}{" "}
