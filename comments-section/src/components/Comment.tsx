@@ -1,5 +1,4 @@
 /// <reference types="vite-plugin-svgr/client" />
-import Data from "../../data.json";
 import { ReactComponent as IconReply } from "../svgs/icon-reply.svg";
 import { ReactComponent as IconDelete } from "../svgs/icon-delete.svg";
 import { ReactComponent as IconEdit } from "../svgs/icon-edit.svg";
@@ -49,7 +48,7 @@ const Comment = ({
               <h2 className="flex text-lg font-bold">
                 {comment.user.username}{" "}
                 {currentUser.username === comment.user.username && (
-                  <span className="text-white text-sm font-normal bg-[#5458B0] rounded py-1 ml-2">
+                  <span className="text-white h-6 mt-1 px-2 text-sm font-normal bg-[#5458B0] rounded ml-2">
                     you
                   </span>
                 )}
