@@ -13,10 +13,7 @@ const Comment = ({
   key?: number;
 }) => {
   const createImageUri = (comment: { user: { image: { png: string } } }) => {
-    const uri = comment.user.image.png.replace(
-      "./images/avatars",
-      "/src/assets"
-    );
+    const uri = comment.user.image.png.replace("./images/avatars", "/assets");
     console.log(uri);
     return new URL(uri, import.meta.url).href;
   };

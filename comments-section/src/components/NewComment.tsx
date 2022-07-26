@@ -4,7 +4,7 @@ const NewComment = ({ thread }: { thread: typeof Data }) => {
   const createImageUri = (thread: typeof Data) => {
     const uri = thread.currentUser.image.png.replace(
       "./images/avatars",
-      "../assets"
+      "/assets"
     );
     return new URL(uri, import.meta.url).href;
   };

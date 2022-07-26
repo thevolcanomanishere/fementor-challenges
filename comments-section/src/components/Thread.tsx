@@ -1,5 +1,4 @@
 import Comment from "./Comment";
-import Data from "../../data.json";
 import { FC } from "react";
 
 const Thread: FC<any> = ({
