@@ -12,7 +12,11 @@ const NewComment = ({ thread }: { thread: typeof Data }) => {
   const imageUri = createImageUri(thread);
   return (
     <section className="flex flex-col md:flex-row bg-white rounded-lg my-2 mx-4 p-3 shadow">
-      <img className="md:w-10 md:h-10 mx-3 hidden md:flex" src={imageUri} />
+      <img
+        className="md:w-10 md:h-10 mx-3 hidden md:flex"
+        src={imageUri}
+        alt="Profile Picture"
+      />
       <textarea
         className="border w-[100%] h-24 rounded self-center mb-4 p-2"
         placeholder="Add a comment..."
