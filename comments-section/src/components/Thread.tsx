@@ -13,7 +13,7 @@ const Thread: FC<any> = ({
   return (
     <div key={propKey}>
       <Comment comment={thread} currentUser={currentUser} />
-      <div className="md:ml-16 ml-4 border-l-2">
+      <div className="md:ml-16 ml-4 md:pl-5 border-l-2">
         {/*@ts-ignore*/}
         {thread.replies.map((reply, index) => {
           return (
