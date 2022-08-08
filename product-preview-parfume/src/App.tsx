@@ -1,34 +1,35 @@
 import imageProduct from "./assets/image-product-desktop.jpg";
 import imageProductMobile from "./assets/image-product-mobile.jpg";
-import cartIcon from "./assets/icon-cart.svg";
 
 function App() {
   return (
-    <div className="flex h-screen justify-cente]">
-      <div className="flex flex-col lg:flex-row my-5 mx-auto lg:m-auto rounded-b">
-        <div>
+    <div className="flex h-screen justify-center overflow-hidden relative">
+      <div className="flex flex-col lg:flex-row mx-auto lg:m-auto rounded-b shadow-xl">
+        <div className="flex max-w-md group z-10">
           <img
-            className="rounded-l-lg max-w-md hidden lg:flex"
+            className="rounded-l-lg object-contain hidden lg:flex"
             src={imageProduct}
+            alt="Perfume bottle on a table surrounded by plants"
           />
           <img
-            className="rounded-t max-w-md lg:hidden"
+            className="rounded-t-lg lg:hidden"
             src={imageProductMobile}
+            alt="Perfume bottle on a table surrounded by plants"
           />
         </div>
-        <div className="flex flex-col bg-white max-w-md px-10 pt-10 rounded-b-lg lg:rounded-r-lg">
-          <h2 className="text-2xl text-[#70768F] font-[Montserrat] font-bold">
+        <div className="flex flex-col bg-white max-w-md px-10 pt-10 rounded-b-lg lg:rounded-r-lg z-20 bg-clip-padding bg-opacity-70">
+          <h2 className="text-xl md:text-2xl text-[#70768F] font-[Montserrat] font-bold">
             P E R F U M E
           </h2>
-          <h2 className="text-4xl lg:text-6xl py-5 p font-[Fraunces] font-bold">
+          <h2 className="text-3xl md:text-4xl lg:text-6xl py-5 p font-[Fraunces] font-bold">
             Gabrielle Essence Eau De Parfum
           </h2>
-          <p className="text-xl font-medium tracking-wider font py-3 lg:py-5 font-[Montserrat] text-[#70768F]">
+          <p className="text-lg md:text-xl font-medium tracking-wider font py-3 lg:py-5 font-[Montserrat] text-[#70768F]">
             A floral, solar and voluptuous interpretation composed by Olivier
             Podge, Perfumer-Creator for the House of CHANEL
           </p>
           <div className="flex flex-row my-6 font-[Fraunces] font-bold">
-            <h3 className="text-green-700 text-5xl">$149.99</h3>
+            <h3 className="text-green-700 text-4xl md:text-5xl">$149.99</h3>
             <p className="text-2xl line-through self-center ml-8 text-[#70768F]">
               $169.99
             </p>
@@ -54,6 +55,11 @@ function App() {
             </button>
           </div>
         </div>
+      </div>
+      <div className="overflow-visible z-0">
+        <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob "></div>
+        <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
       </div>
     </div>
   );
