@@ -4,7 +4,7 @@ import imageProductMobile from "./assets/image-product-mobile.jpg";
 function App() {
   return (
     <div className="flex h-screen justify-center overflow-hidden relative">
-      <div className="flex flex-col lg:flex-row m-auto rounded-b shadow-xl">
+      <div className="flex flex-col lg:flex-row m-auto rounded-b shadow-xl p-10">
         <div className="flex max-w-md group z-10">
           <img
             className="rounded-l-lg object-contain hidden lg:flex"
